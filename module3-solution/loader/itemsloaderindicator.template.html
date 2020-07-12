@@ -1,14 +1,1 @@
 <div class="loader"></div>
-<br/><br/><br/>
-<ul>
-  <li ng-repeat="item in list.items">
-    <span> Name: {{item.name}}
-      <br/>
-        Description: {{item.description}}
-      <br/>
-      <button class="btn btn-warning" ng-click="list.onRemove({index: $index})">
-        Don't want this one!</button>
-    </span>
-  </li>
-  <div class="alert alert-info" ng-if="list.checkFoundList()">Nothing found</div>
-<ul>

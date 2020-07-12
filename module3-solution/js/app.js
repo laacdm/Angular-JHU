@@ -40,8 +40,9 @@ function MenuSearchService($http, ApiBasePath) {
     url: (ApiBasePath)
     }).then(function (response) {
         var foundItems = [];
+        console.log("Response leghth: " + response.data.menu_items.length)
         for ( var i = 0 ; i < response.data.menu_items.length; i++ ) {
-          if ( response.data.menu_items[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ) {
+          if ( response.data.menu_items[i].description.toLowerCase().indexOf(searchTerm.trim().toLowerCase()) !== -1 ) {
             foundItems.push(response.data.menu_items[i]);
             //console.log("foundItems test: " + foundItems[i].name)
           }
@@ -53,7 +54,7 @@ function MenuSearchService($http, ApiBasePath) {
 
 function FoundItemsDirective() {
     var ddo = {
-      templateUrl: '/loader/itemsloaderindicator.template.html',
+      templateUrl: 'loadResults.html',
       scope: {
         items: '<',
         onRemove: '&'
