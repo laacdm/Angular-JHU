@@ -13,18 +13,17 @@ function MenuDataService($http, BasePath) {
     return $http({ method: 'GET',
       url: (BasePath + 'categories.json')
       }).then(function (response) {
-        console.log(response.data)
+        //console.log(response.data)
         return response.data;
       });
   };
 
   service.getItemsForCategory = function(categoryShortName) {
     return $http({ method: 'GET',
-      //url: (BasePath + 'menu_items.json?category=' + categoryShortName),
       url: (BasePath + 'menu_items.json'),
       params: {category: categoryShortName}
       }).then(function (response) {
-        console.log(response.data)
+        //console.log(response.data)
         return response.data;
       });
     };

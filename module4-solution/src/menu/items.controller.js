@@ -10,7 +10,7 @@ function ItemsController(MenuDataService, $stateParams) {
 
   var promise = MenuDataService.getItemsForCategory($stateParams.categoryShortName);
   promise.then(function(response) {
-    items.itemsList = response.menu_items;
+    items.partsList = response.menu_items;
   });
 }
 
