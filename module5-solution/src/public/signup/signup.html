@@ -24,7 +24,7 @@
 
           <div class="form-group" ng-class="{'has-error': (signupForm.phone.$error.required && (!signupForm.phone.$pristine || signupForm.$submitted)) || (signupForm.phone.$error.minlength || signupForm.phone.$error.maxlength)}">
             <label for="phone">Phone Number *</label>
-            <input class="form-control" type="number" name="phone" placeholder="Phone ###-###-####" ng-model="signupCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required />
+            <input class="form-control" type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signupCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required />
             <span ng-show="signupForm.phone.$error.required && (!signupForm.phone.$pristine || signupForm.$submitted)" class="help-block"></span>
             <span ng-show="signupForm.phone.$error.minlength || signupForm.phone.$error.maxlength" class="help-block"></span>
           </div>
